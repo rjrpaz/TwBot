@@ -50,3 +50,5 @@ que el bot delate menos su periodicidad.
 Luego se puede ejecutar vía cron:
 
 */5 * * * * ~/TwBot/tw.pl
+
+Referencias:  http://edvoncken.net/2011/08/twagios-2-0-nagios-notifications-revisited/
