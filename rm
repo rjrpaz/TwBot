@@ -1,0 +1,24 @@
+#!/usr/bin/python
+import sys
+import tweepy
+import string
+import time, os, random, hashlib, datetime
+
+CONSUMER_KEY = 'REPLACE_CONSULFEM_KEY'
+CONSUMER_SECRET = 'REPLACE_CONSUMER_SECRET'
+
+ACCESS_KEY = 'REPLACE_ACCESS_KEY'
+ACCESS_SECRET = 'REPLACE_ACCESS_SECRET'
+
+
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
+twapi = tweepy.API(auth)
+
+# Lee mensajes, los muestra en pantalla y luego los borra
+myDirectMsgs = twapi.direct_messages(count=10)
+for status in myDirectMsgs:
+	u = status.text.encode("utf-8")
+	print u
+	twapi.destroy_direct_message(status.id)
+

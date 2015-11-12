@@ -1,0 +1,25 @@
+#!/usr/bin/env python
+#
+# See: http://talkfast.org/2010/05/31/twitter-from-the-command-line-in-python-using-oauth
+
+import sys
+import tweepy
+import string
+import time, os, random, hashlib, datetime
+
+CONSUMER_KEY = 'REPLACE_CONSULFEM_KEY'
+CONSUMER_SECRET = 'REPLACE_CONSUMER_SECRET'
+
+ACCESS_KEY = 'REPLACE_ACCESS_KEY'
+ACCESS_SECRET = 'REPLACE_ACCESS_SECRET'
+
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
+api = tweepy.API(auth)
+
+s = sys.argv[1]
+u = s.decode("utf-8")
+
+# Send the message, 140 characters max.
+api.update_status(status=u[0:140])
+

@@ -1,0 +1,11 @@
+--
+-- Table structure for table `twitter`
+--
+
+CREATE TABLE `twitter` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `status` varchar(255) NOT NULL DEFAULT '',
+  `hits` int(20) NOT NULL DEFAULT '0',
+  `last` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`id`)
+);
